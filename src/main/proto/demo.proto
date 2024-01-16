@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.matheusrangel.grpcdemo;
+
+option java_multiple_files = true;
+option java_package = "com.matheusrangel.grpcdemo.service";
+option java_outer_classname = "NetSalaryProto";
+
+service NetSalary {
+  rpc Calculate (NetSalaryRequest) returns (NetSalaryResponse) {}
+}
+
+message NetSalaryRequest {
+  double grossSalary = 1;
+}
+
+message NetSalaryResponse {
+  double netSalary = 1;
+}
